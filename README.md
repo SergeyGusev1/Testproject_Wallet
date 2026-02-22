@@ -2,6 +2,11 @@
 
 Простое FastAPI приложение для управления кошельками с поддержкой асинхронных операций и баланса.
 
+[![Python](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.115-green.svg)](https://fastapi.tiangolo.com/)
+[![Docker](https://img.shields.io/badge/docker-ready-blue.svg)](https://www.docker.com/)
+[![Tests](https://img.shields.io/badge/tests-7%20passed-brightgreen)](tests/)
+
 ## Функциональность
 
 - **GET /api/v1/wallets/{wallet_uuid}** — получение баланса кошелька
