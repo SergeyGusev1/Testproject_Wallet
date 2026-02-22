@@ -1,7 +1,6 @@
 import os
 import sys
 
-from logging.config import fileConfig
 
 from app.models.wallet import Wallet # noqa
 from app.core.config import settings
