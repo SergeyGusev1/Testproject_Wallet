@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field, UUID4
+from pydantic import BaseModel, Field, UUID4, ConfigDict
 from enum import Enum
 
 
@@ -16,8 +16,7 @@ class WalletResponse(BaseModel):
     uuid: UUID4
     balance: int
 
-    class Config:
-        from_attributes = True
+    model_config = ConfigDict(from_attributes=True)
 
 
 class ErrorResponse(BaseModel):
