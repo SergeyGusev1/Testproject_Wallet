@@ -29,43 +29,53 @@
    ```bash
    git clone https://github.com/SergeyGusev1/Testproject_Wallet.git
    cd Testproject_Wallet
+   ```
 Запустите контейнеры:
-
+```bash
 bash
 docker-compose up --build
+```
 Приложение будет доступно по адресу: http://localhost:8000
 
 Документация API (Swagger): http://localhost:8000/docs
 
 Запуск без Docker (для разработки)
 Создайте виртуальное окружение:
-
+```bash
 bash
 python -m venv venv
 source venv/bin/activate  # Linux/Mac
 venv\Scripts\activate     # Windows
+```
 Установите зависимости:
-
+```bash
 bash
 pip install -r requirements.txt
+```
 Настройте PostgreSQL и создайте базу данных wallet_db.
 
 Создайте файл .env из примера:
-
+```bash
 env
 DATABASE_URL=postgresql+asyncpg://postgres:postgres@localhost:5432/wallet_db
+```
 Примените миграции:
-
+```bash
 bash
 alembic upgrade head
+```
 Запустите сервер:
-
+```bash
 bash
 uvicorn app.main:app --reload
+```
 Тестирование
+```bash
 bash
 pytest tests/ -v
-Структура проекта
+```
+Структура 
+```bash
 text
 Testproject_Wallet/
 ├── app/                    # Основной код приложения
@@ -81,3 +91,4 @@ Testproject_Wallet/
 ├── docker-compose.yml
 ├── requirements.txt
 └── README.md                # Этот файл
+```
