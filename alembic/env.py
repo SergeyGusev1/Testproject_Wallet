@@ -17,16 +17,13 @@ sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 # access to the values within the .ini file in use.
 config = context.config
 database_url = settings.database_url
-print(f"Original URL from settings: {database_url}")  # для отладки
-
-# 🔥 ЗАМЕНЯЕМ АСИНХРОННЫЙ ДРАЙВЕР НА СИНХРОННЫЙ
+print(f"Original URL from settings: {database_url}")
 if database_url.startswith("postgresql+asyncpg:"):
     sync_url = database_url.replace("postgresql+asyncpg:", "postgresql:")
     print(f"Using SYNC URL for migrations: {sync_url}")
 else:
     sync_url = database_url
 
-# Устанавливаем синхронный URL для Alembic
 config.set_main_option("sqlalchemy.url", sync_url)
 target_metadata = Base.metadata
 
